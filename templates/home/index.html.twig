@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gaming Blog!{% endblock %}
+
+{% block body %}
+<header>
+    
+    <div  >
+      {% if app.user == true %}
+        <div class="mb-3">
+          <h2 class="text-center mt-4">Bonjour {{ app.user.userIdentifier }}</h2>
+        </div>
+        {% else %}
+      <div class="mb-3">
+        <h2 class="text-center m-5"> Bonjour <a href="login">veuillez vous connecter</a> /ou <a href="register">vous inscrire</a></h2>
+        </div>
+    
+    </div>
+    
+    {% endif %}
+    <main style="min-height:500px">
+
+    </main>
+{% endblock %}

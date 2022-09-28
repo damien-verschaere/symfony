@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper d-flex flex-wrap justify-content-center" >
+{% for article in articles %}
+  
+    <div class="card m-4" style="width: 18rem;">
+  <div class="card-body bg-dark overflow-auto">
+    
+    <a href="{{ path('articles', {'id': article.id}) }}">
+      <h5 class="card-title text-center">{{article.Titre}}</h5>
+    </a>
+    
+    <p style="color:white" class="card-text text-center text-truncate ">{{article.texte}}</p>
+    <p style="color:white" class=" text-center">{{article.dateArticle|date('d-M-Y')}}</p>
+   
+    
+  </div>
+</div>
+{% endfor %}
+    
+</div>
+{% endblock %}

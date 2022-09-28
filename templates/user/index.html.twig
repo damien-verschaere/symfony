@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+
+      <div class="d-flex align-items-center flex-column m-5 mt-5"style="min-height:500px">
+        {% if app.user == true %}
+          {{form(profilForm)}}
+        {% endif %}
+
+</div>
+{% endblock %}

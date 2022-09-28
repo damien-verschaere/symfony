@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper" style="min-height:500px">
+    <div class="m-5 d-flex flex-column align-items-center">
+        <h1 class='mt-3'>{{article.titre}} par {{article.getArticleUser.getUsername}}</h1>
+        <p class="m-5" style="width:65%">{{article.texte}} </p>
+        <p class="m-3" style="font-size:xx-large">{{article.dateArticle|date('d-M-Y')}}</p>
+    </div>
+    <div class="d-flex align-items-center flex-column m-5">
+      {% for comment in article.getComments %}
+      <div class=" d-flex  ">
+      <p class="me-5 fs-5">{{comment.getCommentsUser.getUsername}}</p>
+      <p class="fs-5">  {{comment.getTextComments}} </p>
+      <p class="ms-5 fs-5"> {{comment.getDateComments|date('d-M-Y')}} </p>
+      </div>
+      {% endfor %}
+      </div>
+      <div class="d-flex align-items-center flex-column m-5">
+        {% if app.user == true %}
+          {{form(commentForm)}}
+        {% endif %}
+
+</div>
+{% endblock %}

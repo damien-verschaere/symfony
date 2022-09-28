@@ -1,0 +1,9 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+Home:
+    path: /
+    controller: App\Controller\HomeController::index
+dashboard:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
